@@ -125,23 +125,20 @@ function ProductDemo() {
 
 function TraceLanding() {
   return (
-    <div style={{ minHeight: "100vh", background: "#080810", color: "#f0f0ff", fontFamily: "var(--font-inter, system-ui, sans-serif)", overflowX: "hidden" }}>
-      {/* Grid */}
-      <div style={{ position: "fixed", inset: 0, backgroundImage: "linear-gradient(rgba(124,92,252,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(124,92,252,0.03) 1px, transparent 1px)", backgroundSize: "48px 48px", pointerEvents: "none" }} />
-      {/* Glow top */}
-      <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 900, height: 500, background: "radial-gradient(ellipse, rgba(239,68,68,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
+    <div style={{ minHeight: "100vh", background: "#000000", color: "#ededed", fontFamily: "var(--font-inter, system-ui, sans-serif)", overflowX: "hidden" }}>
+      {/* Glow top removed for cleaner look */}
 
       {/* Nav */}
-      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 48px", borderBottom: "1px solid rgba(255,255,255,0.05)", position: "sticky", top: 0, zIndex: 50, backdropFilter: "blur(20px)", background: "rgba(8,8,16,0.9)" }}>
+      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 48px", borderBottom: "1px solid #222", position: "sticky", top: 0, zIndex: 50, backdropFilter: "blur(20px)", background: "rgba(0,0,0,0.8)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 30, height: 30, borderRadius: 8, background: "linear-gradient(135deg, #ef4444, #7c5cfc)", display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
+          <div style={{ width: 30, height: 30, borderRadius: 8, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", color: "#000" }}>
             <Search size={16} strokeWidth={2.5} />
           </div>
-          <span style={{ fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-0.03em" }}>trace</span>
-          <span style={{ fontSize: "0.8rem", color: "#3a3a50", background: "#111118", border: "1px solid #1f1f2d", borderRadius: 5, padding: "2px 8px" }}>beta</span>
+          <span style={{ fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-0.03em", color: "#fff" }}>trace</span>
+          <span style={{ fontSize: "0.75rem", color: "#888", background: "#111", border: "1px solid #333", borderRadius: 4, padding: "2px 6px", textTransform: "uppercase", letterSpacing: "0.05em" }}>beta</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <a href="/api/auth/chutes/login" style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 20px", background: "linear-gradient(135deg, #ef4444, #dc2626)", color: "#fff", fontWeight: 700, fontSize: "0.95rem", borderRadius: 10, textDecoration: "none", boxShadow: "0 4px 20px rgba(239,68,68,0.25)" }}>
+          <a href="/api/auth/chutes/login" style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 20px", background: "#fff", color: "#000", fontWeight: 600, fontSize: "0.9rem", borderRadius: 6, textDecoration: "none", border: "1px solid #fff" }}>
             Sign in →
           </a>
         </div>
@@ -149,35 +146,35 @@ function TraceLanding() {
 
       {/* Hero */}
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "80px 48px 60px", textAlign: "center" }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.18)", borderRadius: 100, padding: "5px 16px", marginBottom: 28, fontSize: "0.75rem", color: "#f87171" }}>
-          <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#ef4444", display: "inline-block", animation: "pulse 2s infinite" }} />
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#111", border: "1px solid #333", borderRadius: 100, padding: "5px 16px", marginBottom: 28, fontSize: "0.75rem", color: "#aaa" }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#fff", display: "inline-block" }} />
           Enterprise-grade TEE · Zero data retention
         </div>
 
-        <h1 style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)", fontWeight: 900, lineHeight: 1.0, letterSpacing: "-0.05em", marginBottom: 22 }}>
+        <h1 style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.04em", marginBottom: 22, color: "#fff" }}>
           Debug faster.<br />
-          <span style={{ background: "linear-gradient(135deg, #ef4444 0%, #7c5cfc 60%, #22d3a0 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Three minds,</span><br />
+          <span style={{ color: "#888" }}>Three minds,</span><br />
           one answer.
         </h1>
 
-        <p style={{ fontSize: "1.1rem", color: "#a0a0c0", lineHeight: 1.65, maxWidth: 560, margin: "0 auto 16px" }}>
-          Paste your production logs — API keys, stack traces, anything. Three independent AI models on <strong style={{ color: "#f0f0ff" }}>Chutes TEE hardware</strong> analyze in parallel and reach a consensus in under 60 seconds.
+        <p style={{ fontSize: "1.1rem", color: "#888", lineHeight: 1.65, maxWidth: 560, margin: "0 auto 16px" }}>
+          Paste your production logs — API keys, stack traces, anything. Three independent AI models on <strong style={{ color: "#fff" }}>Chutes TEE hardware</strong> analyze in parallel and reach a consensus in under 2 minutes.
         </p>
-        <p style={{ fontSize: "0.85rem", color: "#60607a", marginBottom: 40 }}>
+        <p style={{ fontSize: "0.85rem", color: "#555", marginBottom: 40 }}>
           Your data stays inside a hardware-encrypted enclave. Not even Chutes can read it.
         </p>
 
-        <a href="/api/auth/chutes/login" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 32px", background: "linear-gradient(135deg, #ef4444, #dc2626)", color: "#fff", fontWeight: 700, fontSize: "1rem", borderRadius: 12, textDecoration: "none", boxShadow: "0 8px 32px rgba(239,68,68,0.3)", marginBottom: 18 }}>
+        <a href="/api/auth/chutes/login" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 32px", background: "#fff", color: "#000", fontWeight: 600, fontSize: "1rem", borderRadius: 8, textDecoration: "none", border: "1px solid #fff", marginBottom: 18 }}>
           <Search size={18} /> Start debugging for free →
         </a>
-        <div style={{ fontSize: "0.85rem", color: "#3a3a50" }}>Free with your Chutes account · No data leaves TEE</div>
+        <div style={{ fontSize: "0.85rem", color: "#555" }}>Free with your Chutes account · No data leaves TEE</div>
 
         {/* Stats */}
-        <div style={{ display: "flex", justifyContent: "center", gap: 40, marginTop: 48, paddingTop: 40, borderTop: "1px solid #1a1a24" }}>
-          {[["3", "independent AI models"], ["< 60s", "to root cause"], ["0", "data leaks"], ["100%", "TEE-secured"]].map(([v, l]) => (
+        <div style={{ display: "flex", justifyContent: "center", gap: 60, marginTop: 48, paddingTop: 40, borderTop: "1px solid #222" }}>
+          {[["3", "independent AI models"], ["< 2min", "to root cause"], ["0", "data leaks"], ["100%", "TEE-secured"]].map(([v, l]) => (
             <div key={l} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "2.2rem", fontWeight: 900, letterSpacing: "-0.04em", background: "linear-gradient(135deg, #ef4444, #7c5cfc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{v}</div>
-              <div style={{ fontSize: "0.85rem", color: "#3a3a50", marginTop: 2 }}>{l}</div>
+              <div style={{ fontSize: "2rem", fontWeight: 700, letterSpacing: "-0.03em", color: "#fff" }}>{v}</div>
+              <div style={{ fontSize: "0.85rem", color: "#666", marginTop: 4 }}>{l}</div>
             </div>
           ))}
         </div>
@@ -191,22 +188,22 @@ function TraceLanding() {
       {/* Inputs */}
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "0 48px 80px" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <h2 style={{ fontSize: "2.2rem", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: 8 }}>Analyze anything</h2>
-          <p style={{ color: "#60607a", fontSize: "1rem" }}>Three ways to feed Trace. All equally private.</p>
+          <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 8, color: "#fff" }}>Analyze anything</h2>
+          <p style={{ color: "#888", fontSize: "1rem" }}>Three ways to feed Trace. All equally private.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
           {[
-            { icon: <ClipboardList size={28} />, title: "Error Logs", sub: "Paste stack traces, crash logs, or any raw output. API keys are sealed before models see them.", color: "#ef4444", tag: "Most common" },
-            { icon: <GitBranch size={28} />, title: "GitHub Repos", sub: "Paste any public repo URL. Trace fetches the code and runs a proactive security and quality audit.", color: "#7c5cfc", tag: "New" },
-            { icon: <Folder size={28} />, title: "File Upload", sub: "Drag & drop individual files or an entire folder. Three agents find bugs, security flaws, and anti-patterns.", color: "#22d3a0", tag: "Code audit" },
+            { icon: <ClipboardList size={28} />, title: "Error Logs", sub: "Paste stack traces, crash logs, or any raw output. API keys are sealed before models see them.", color: "#fff", tag: "Most common" },
+            { icon: <GitBranch size={28} />, title: "GitHub Repos", sub: "Paste any public repo URL. Trace fetches the code and runs a proactive security and quality audit.", color: "#aaa", tag: "New" },
+            { icon: <Folder size={28} />, title: "File Upload", sub: "Drag & drop individual files or an entire folder. Three agents find bugs, security flaws, and anti-patterns.", color: "#aaa", tag: "Code audit" },
           ].map(f => (
-            <div key={f.title} style={{ background: "#0d0d1a", border: `1px solid ${f.color}15`, borderRadius: 14, padding: "22px 20px" }}>
+            <div key={f.title} style={{ background: "#0a0a0a", border: `1px solid #222`, borderRadius: 12, padding: "22px 20px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12, color: f.color }}>
                 {f.icon}
-                <span style={{ fontSize: "0.75rem", color: f.color, background: `${f.color}10`, border: `1px solid ${f.color}20`, borderRadius: 4, padding: "2px 7px" }}>{f.tag}</span>
+                <span style={{ fontSize: "0.75rem", color: "#888", background: `#111`, border: `1px solid #333`, borderRadius: 4, padding: "2px 7px" }}>{f.tag}</span>
               </div>
-              <div style={{ fontWeight: 700, fontSize: "1.1rem", color: "#f0f0ff", marginBottom: 6 }}>{f.title}</div>
-              <div style={{ fontSize: "0.9rem", color: "#60607a", lineHeight: 1.55 }}>{f.sub}</div>
+              <div style={{ fontWeight: 600, fontSize: "1.1rem", color: "#fff", marginBottom: 6 }}>{f.title}</div>
+              <div style={{ fontSize: "0.9rem", color: "#666", lineHeight: 1.55 }}>{f.sub}</div>
             </div>
           ))}
         </div>
@@ -215,23 +212,23 @@ function TraceLanding() {
       {/* Models */}
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "0 48px 80px" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <h2 style={{ fontSize: "2.2rem", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: 8 }}>Three minds. All inside TEE.</h2>
-          <p style={{ color: "#60607a", fontSize: "1rem" }}>Different architectures = genuinely independent perspectives. Not just running the same model 3×.</p>
+          <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 8, color: "#fff" }}>Three minds. All inside TEE.</h2>
+          <p style={{ color: "#888", fontSize: "1rem" }}>Different architectures = genuinely independent perspectives. Not just running the same model 3×.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
           {[
-            { color: "#7c5cfc", label: "Qwen3 32B · TEE", role: "Hypothesis 01", by: "Alibaba", note: "Strong reasoning, chain-of-thought visible", badge: "Thinking" },
-            { color: "#22d3a0", label: "Gemma 4 31B · TEE", role: "Hypothesis 02", by: "Google", note: "Different training approach, independent view", badge: "Turbo" },
-            { color: "#f59e0b", label: "DeepSeek V3.2 · TEE", role: "Synthesis", by: "DeepSeek", note: "Chief agent — synthesizes all three into the final fix", badge: "Synthesis" },
+            { color: "#aaa", label: "Qwen3 32B · TEE", role: "Hypothesis 01", by: "Alibaba", note: "Strong reasoning, chain-of-thought visible", badge: "Thinking" },
+            { color: "#aaa", label: "Gemma 4 31B · TEE", role: "Hypothesis 02", by: "Google", note: "Different training approach, independent view", badge: "Turbo" },
+            { color: "#fff", label: "DeepSeek V3.2 · TEE", role: "Synthesis", by: "DeepSeek", note: "Chief agent — synthesizes all three into the final fix", badge: "Synthesis" },
           ].map(m => (
-            <div key={m.label} style={{ background: "#0d0d1a", border: `1px solid ${m.color}20`, borderRadius: 14, padding: "20px" }}>
+            <div key={m.label} style={{ background: "#0a0a0a", border: `1px solid #222`, borderRadius: 12, padding: "20px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, gap: 8 }}>
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: m.color, flexShrink: 0 }} />
-                <span style={{ fontSize: "0.7rem", color: m.color, background: `${m.color}10`, border: `1px solid ${m.color}20`, borderRadius: 4, padding: "2px 7px" }}>{m.badge}</span>
+                <span style={{ fontSize: "0.7rem", color: "#888", background: `#111`, border: `1px solid #333`, borderRadius: 4, padding: "2px 7px" }}>{m.badge}</span>
               </div>
-              <div style={{ fontFamily: "monospace", fontSize: "0.9rem", color: "#f0f0ff", fontWeight: 600, marginBottom: 4 }}>{m.label}</div>
-              <div style={{ fontSize: "0.8rem", color: "#3a3a50", marginBottom: 8 }}>by {m.by} · {m.role}</div>
-              <div style={{ fontSize: "0.85rem", color: "#60607a", lineHeight: 1.5 }}>{m.note}</div>
+              <div style={{ fontFamily: "monospace", fontSize: "0.9rem", color: "#fff", fontWeight: 600, marginBottom: 4 }}>{m.label}</div>
+              <div style={{ fontSize: "0.8rem", color: "#666", marginBottom: 8 }}>by {m.by} · {m.role}</div>
+              <div style={{ fontSize: "0.85rem", color: "#888", lineHeight: 1.5 }}>{m.note}</div>
             </div>
           ))}
         </div>
@@ -239,18 +236,18 @@ function TraceLanding() {
 
       {/* Why TEE */}
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "0 48px 80px" }}>
-        <div style={{ background: "rgba(239,68,68,0.04)", border: "1px solid rgba(239,68,68,0.12)", borderRadius: 20, padding: "40px 44px", display: "flex", gap: 32, alignItems: "flex-start" }}>
-          <div style={{ flexShrink: 0, color: "#ef4444", background: "rgba(239,68,68,0.1)", padding: 12, borderRadius: "50%" }}>
+        <div style={{ background: "#0a0a0a", border: "1px solid #222", borderRadius: 16, padding: "40px 44px", display: "flex", gap: 32, alignItems: "flex-start" }}>
+          <div style={{ flexShrink: 0, color: "#fff", background: "#111", border: "1px solid #333", padding: 12, borderRadius: "50%" }}>
             <Lock size={36} strokeWidth={2} />
           </div>
           <div>
-            <h2 style={{ fontSize: "1.8rem", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 12 }}>Why TEE changes everything for debugging</h2>
-            <p style={{ color: "#a0a0c0", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: 16 }}>
-              Every developer knows the risk: paste a production error into ChatGPT and you might expose <strong style={{ color: "#f0f0ff" }}>database credentials, API keys, or PII</strong>. Trace runs inside Chutes <strong style={{ color: "#f0f0ff" }}>Trusted Execution Environments</strong> — hardware-encrypted enclaves (Intel SGX / AMD SEV-SNP) where even Chutes itself cannot read your data.
+            <h2 style={{ fontSize: "1.8rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 12, color: "#fff" }}>Why TEE changes everything for debugging</h2>
+            <p style={{ color: "#888", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: 16 }}>
+              Every developer knows the risk: paste a production error into ChatGPT and you might expose <strong style={{ color: "#fff", fontWeight: 600 }}>database credentials, API keys, or PII</strong>. Trace runs inside Chutes <strong style={{ color: "#fff", fontWeight: 600 }}>Trusted Execution Environments</strong> — hardware-encrypted enclaves (Intel SGX / AMD SEV-SNP) where even Chutes itself cannot read your data.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               {["Hardware-encrypted SGX / SEV-SNP", "Credentials auto-detected & sealed", "Zero training on your logs", "Verifiable attestation"].map(t => (
-                <span key={t} style={{ fontSize: "0.72rem", color: "#22d3a0", background: "rgba(34,211,160,0.06)", border: "1px solid rgba(34,211,160,0.15)", borderRadius: 6, padding: "4px 10px" }}>✓ {t}</span>
+                <span key={t} style={{ fontSize: "0.75rem", color: "#aaa", background: "#111", border: "1px solid #333", borderRadius: 6, padding: "4px 10px" }}>✓ {t}</span>
               ))}
             </div>
           </div>
@@ -260,14 +257,14 @@ function TraceLanding() {
       {/* Comparison */}
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "0 48px 80px" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <h2 style={{ fontSize: "2.2rem", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: 8 }}>Trace vs the alternatives</h2>
-          <p style={{ color: "#60607a", fontSize: "1rem" }}>Why pasting into ChatGPT is not the same thing.</p>
+          <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 8, color: "#fff" }}>Trace vs the alternatives</h2>
+          <p style={{ color: "#888", fontSize: "1rem" }}>Why pasting into ChatGPT is not the same thing.</p>
         </div>
-        <div style={{ background: "#0d0d1a", border: "1px solid #1f1f2d", borderRadius: 16, overflow: "hidden" }}>
+        <div style={{ background: "#0a0a0a", border: "1px solid #222", borderRadius: 12, overflow: "hidden" }}>
           {/* Header */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", borderBottom: "1px solid #1a1a24" }}>
-            {["Feature", "ChatGPT / Claude", "GitHub Copilot", "Trace ✦"].map((h, i) => (
-              <div key={h} style={{ padding: "12px 16px", fontSize: "0.85rem", fontWeight: 700, color: i === 3 ? "#f0f0ff" : "#3a3a50", background: i === 3 ? "rgba(124,92,252,0.06)" : "transparent", borderRight: i < 3 ? "1px solid #1a1a24" : "none", textAlign: i > 0 ? "center" : "left" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", borderBottom: "1px solid #222" }}>
+            {["Feature", "ChatGPT / Claude", "GitHub Copilot", "Trace"].map((h, i) => (
+              <div key={h} style={{ padding: "14px 16px", fontSize: "0.85rem", fontWeight: 700, color: i === 3 ? "#fff" : "#888", background: i === 3 ? "#111" : "transparent", borderRight: i < 3 ? "1px solid #222" : "none", textAlign: i > 0 ? "center" : "left" }}>
                 {h}
               </div>
             ))}
@@ -280,11 +277,11 @@ function TraceLanding() {
             ["GitHub code audit", "-", "Partial", "Full"],
             ["Error + files + repos", "Paste only", "Inline only", "All three"],
           ].map(([feat, a, b, c], i) => (
-            <div key={feat} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", borderBottom: i < 5 ? "1px solid #141420" : "none" }}>
-              <div style={{ padding: "10px 16px", fontSize: "0.88rem", color: "#a0a0c0", borderRight: "1px solid #141420" }}>{feat}</div>
-              <div style={{ padding: "10px 16px", fontSize: "0.88rem", color: "#60607a", textAlign: "center", borderRight: "1px solid #141420" }}>{a}</div>
-              <div style={{ padding: "10px 16px", fontSize: "0.88rem", color: "#60607a", textAlign: "center", borderRight: "1px solid #141420" }}>{b}</div>
-              <div style={{ padding: "10px 16px", fontSize: "0.88rem", color: "#22d3a0", textAlign: "center", fontWeight: 600, background: "rgba(124,92,252,0.04)" }}>{c}</div>
+            <div key={feat} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", borderBottom: i < 5 ? "1px solid #1a1a1a" : "none" }}>
+              <div style={{ padding: "12px 16px", fontSize: "0.88rem", color: "#aaa", borderRight: "1px solid #1a1a1a" }}>{feat}</div>
+              <div style={{ padding: "12px 16px", fontSize: "0.88rem", color: "#666", textAlign: "center", borderRight: "1px solid #1a1a1a" }}>{a}</div>
+              <div style={{ padding: "12px 16px", fontSize: "0.88rem", color: "#666", textAlign: "center", borderRight: "1px solid #1a1a1a" }}>{b}</div>
+              <div style={{ padding: "12px 16px", fontSize: "0.88rem", color: "#fff", textAlign: "center", fontWeight: 600, background: "#111" }}>{c}</div>
             </div>
           ))}
         </div>
@@ -293,20 +290,20 @@ function TraceLanding() {
       {/* How it works */}
       <section style={{ maxWidth: 960, margin: "0 auto", padding: "0 48px 80px" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <h2 style={{ fontSize: "2.2rem", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: 8 }}>Four stages. Under 60 seconds.</h2>
+          <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 8, color: "#fff" }}>Four stages. Under 2 minutes.</h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
           {[
-            { step: "01", icon: <ClipboardList size={28} />, title: "Input", desc: "Error log, file upload, or GitHub URL. Credentials are sealed before analysis.", color: "#ef4444" },
-            { step: "02", icon: <Zap size={28} />, title: "Parse", desc: "Qwen3 32B extracts error type, file, line, and flags sensitive tokens in-enclave.", color: "#f59e0b" },
-            { step: "03", icon: <GitMerge size={28} />, title: "3× Parallel", desc: "Qwen3, Gemma 4, and DeepSeek each form an independent hypothesis simultaneously.", color: "#7c5cfc" },
-            { step: "04", icon: <CheckCircle size={28} />, title: "Consensus", desc: "DeepSeek V3 synthesizes all three. Outputs root cause, code fix, and prevention tip.", color: "#22d3a0" },
+            { step: "01", icon: <ClipboardList size={28} />, title: "Input", desc: "Error log, file upload, or GitHub URL. Credentials are sealed before analysis." },
+            { step: "02", icon: <Zap size={28} />, title: "Parse", desc: "Qwen3 32B extracts error type, file, line, and flags sensitive tokens in-enclave." },
+            { step: "03", icon: <GitMerge size={28} />, title: "3× Parallel", desc: "Qwen3, Gemma 4, and DeepSeek each form an independent hypothesis simultaneously." },
+            { step: "04", icon: <CheckCircle size={28} />, title: "Consensus", desc: "DeepSeek V3 synthesizes all three. Outputs root cause, code fix, and prevention tip." },
           ].map(s => (
-            <div key={s.step} style={{ background: "#0d0d1a", border: `1px solid ${s.color}15`, borderRadius: 14, padding: "20px 18px" }}>
-              <div style={{ fontSize: "0.7rem", color: s.color, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>{s.step}</div>
-              <div style={{ marginBottom: 10, color: s.color }}>{s.icon}</div>
-              <div style={{ fontWeight: 700, color: "#f0f0ff", fontSize: "1.05rem", marginBottom: 6 }}>{s.title}</div>
-              <div style={{ color: "#60607a", fontSize: "0.9rem", lineHeight: 1.55 }}>{s.desc}</div>
+            <div key={s.step} style={{ background: "#0a0a0a", border: `1px solid #222`, borderRadius: 12, padding: "20px 18px" }}>
+              <div style={{ fontSize: "0.7rem", color: "#888", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>{s.step}</div>
+              <div style={{ marginBottom: 10, color: "#fff" }}>{s.icon}</div>
+              <div style={{ fontWeight: 600, color: "#fff", fontSize: "1.05rem", marginBottom: 6 }}>{s.title}</div>
+              <div style={{ color: "#666", fontSize: "0.9rem", lineHeight: 1.55 }}>{s.desc}</div>
             </div>
           ))}
         </div>
@@ -314,20 +311,20 @@ function TraceLanding() {
 
       {/* CTA */}
       <section style={{ maxWidth: 640, margin: "0 auto", padding: "0 48px 100px", textAlign: "center" }}>
-        <div style={{ background: "linear-gradient(135deg, rgba(239,68,68,0.06), rgba(124,92,252,0.06))", border: "1px solid rgba(239,68,68,0.12)", borderRadius: 20, padding: "48px 40px" }}>
+        <div style={{ background: "#0a0a0a", border: "1px solid #222", borderRadius: 16, padding: "48px 40px" }}>
           <div style={{ marginBottom: 16, display: "flex", justifyContent: "center" }}>
-            <div style={{ padding: 14, background: "rgba(124,92,252,0.1)", color: "#7c5cfc", borderRadius: "50%" }}>
+            <div style={{ padding: 14, background: "#111", color: "#fff", borderRadius: "50%", border: "1px solid #333" }}>
               <Search size={40} />
             </div>
           </div>
-          <h2 style={{ fontSize: "2.2rem", fontWeight: 900, letterSpacing: "-0.04em", marginBottom: 12 }}>Ready to debug smarter?</h2>
-          <p style={{ color: "#a0a0c0", fontSize: "1rem", lineHeight: 1.65, marginBottom: 28 }}>
-            Sign in with your Chutes account. No extra setup. Your first analysis runs in under 60 seconds.
+          <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 12, color: "#fff" }}>Ready to debug smarter?</h2>
+          <p style={{ color: "#888", fontSize: "1rem", lineHeight: 1.65, marginBottom: 28 }}>
+            Sign in with your Chutes account. No extra setup. Your first analysis runs in under 2 minutes.
           </p>
-          <a href="/api/auth/chutes/login" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 32px", background: "linear-gradient(135deg, #ef4444, #dc2626)", color: "#fff", fontWeight: 700, fontSize: "1rem", borderRadius: 12, textDecoration: "none", boxShadow: "0 8px 32px rgba(239,68,68,0.3)" }}>
+          <a href="/api/auth/chutes/login" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 32px", background: "#fff", color: "#000", fontWeight: 600, fontSize: "1rem", borderRadius: 8, textDecoration: "none", border: "1px solid #fff" }}>
             Sign in with Chutes — It&apos;s Free →
           </a>
-          <div style={{ marginTop: 14, fontSize: "0.85rem", color: "#3a3a50" }}>Uses your Chutes rate limits · Private architecture</div>
+          <div style={{ marginTop: 14, fontSize: "0.85rem", color: "#666" }}>Uses your Chutes rate limits · Private architecture</div>
         </div>
       </section>
 
