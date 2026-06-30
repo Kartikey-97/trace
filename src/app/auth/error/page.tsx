@@ -46,7 +46,7 @@ function ErrorContent() {
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 16 }}>
           <Brain size={16} color="#7c5cfc" />
-          <span style={{ fontWeight: 700, color: "#f0f0ff", fontSize: "1rem" }}>FlowMind</span>
+          <span style={{ fontWeight: 700, color: "#f0f0ff", fontSize: "1rem" }}>trace</span>
         </div>
 
         <h1 style={{ fontSize: "1.4rem", fontWeight: 700, color: "#f0f0ff", marginBottom: 12, letterSpacing: "-0.02em" }}>

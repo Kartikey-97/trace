@@ -8,16 +8,18 @@ export async function GET() {
   const { verifier, challenge } = await generatePKCE();
   const state = generateState();
 
-  // Store verifier + state in cookies for the callback
-  const cookieStore = await cookies();
-  cookieStore.set("chutes_pkce_verifier", verifier, {
+  const authUrl = buildAuthorizationUrl(challenge, state);
+  const response = NextResponse.redirect(authUrl);
+
+  response.cookies.set("chutes_pkce_verifier", verifier, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: 600, // 10 minutes
     path: "/",
   });
-  cookieStore.set("chutes_oauth_state", state, {
+  
+  response.cookies.set("chutes_oauth_state", state, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
@@ -25,6 +27,5 @@ export async function GET() {
     path: "/",
   });
 
-  const authUrl = buildAuthorizationUrl(challenge, state);
-  return NextResponse.redirect(authUrl);
+  return response;
 }
